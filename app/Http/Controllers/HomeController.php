@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
+
 class HomeController extends Controller
 {
     /**
@@ -22,17 +25,11 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {
+    {   
+        //$permission1 = Permission::create(['name'=>'store detail']);
+        //$role1 = Role::findById(1);
+        //$role1->givePermissionTo($permission1);
         return view('home');
     }
 
-   /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function adminHome()
-    {
-        return view('adminHome');
-    }
 }

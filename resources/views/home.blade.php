@@ -14,7 +14,20 @@
                         </div>
                     @endif
 
-                    You are a normal user
+                    Bienvenido Usuario
+
+                    @can('customer detail')
+                        Este texto solo lo ven los "customers"
+                    @endcan
+
+                    @can('customer detail')
+                        Este texto solo lo ven las "stores"
+                    @endcan
+
+                    @can('customer detail')
+                        Este texto solo lo ven los "providers"
+                    @endcan
+
                 </div>
             </div>
         </div>
