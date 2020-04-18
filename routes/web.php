@@ -21,6 +21,8 @@ Route::resource('products','ProductController');
 
 Auth::routes();
 
-Route::get('admin/home', 'HomeController@adminHome')->name('admin.home')->middleware('is_admin');
+Route::get('admin/home', 'AdminController@index')->name('admin.home');
+
+Route::get('admin/home/giveRole', 'AdminController@giveRoleToUser')->name('admin.giveRole');
 
 Route::get('/home', 'HomeController@index')->name('home');
