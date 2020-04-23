@@ -20,7 +20,9 @@ class LoginController extends Controller
     |
     */
 
-    use AuthenticatesUsers;
+    use AuthenticatesUsers {
+        logout as doLogout;
+    }
 
     /**
      * Where to redirect users after login.
@@ -39,6 +41,13 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+    public function logout(Request $request)
+{
+    $this->doLogout($request);
+
+    return redirect()->route('login');
+}
+
     public function login(Request $request)
     {   
         $input = $request->all();
@@ -50,7 +59,8 @@ class LoginController extends Controller
    
         if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password'])))
         {
-            if (auth()->user()->is_admin == 1) {
+            
+            if (auth()->user()->hasRole('Admin')) {
                 return redirect()->route('admin.home');
             }else{
                 return redirect()->route('home');
