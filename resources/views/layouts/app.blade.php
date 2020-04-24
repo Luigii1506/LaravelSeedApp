@@ -107,7 +107,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('inventario') }}">
+                        <a class="nav-link" href="{{ route('libros.index') }}">
                             <i class="fas fa-fw fa-book"></i>
                             <span>Inventario</span>
                         </a>
@@ -287,8 +287,7 @@
                         </div>
                     </footer>
                 </div>
-            </div>
-            <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -305,16 +304,19 @@
                     </div>
                 </div>
             </div>
+            
             <div class="btn-group-fab" role="group" aria-label="FAB Menu">
                 <div>
                     <button type="button" class="btn btn-main btn-primary has-tooltip" data-placement="left" title="Menu"> <i class="fa fa-bars"></i> </button>
-                    @can('agregar libro')
-                        <button type="button" class="btn btn-sub btn-info has-tooltip" data-placement="left" title="Fullscreen" data-toggle="modal" data-target="#exampleModal"> <i class="fa fa-plus"></i> </button>
+                    @can('administrar libros') 
+                        <a class="btn btn-sub btn-info has-tooltip" data-placement="left" title="Fullscreen" href="{{ route('libros.create') }}"> <i class="fa fa-plus"></i> </a>
                     @endcan
                     <button type="button" class="btn btn-sub btn-danger has-tooltip" data-placement="left" title="Save"> <i class="fa fa-floppy-o"></i> </button>
                     <button type="button" class="btn btn-sub btn-warning has-tooltip" data-placement="left" title="Download"> <i class="fa fa-download"></i> </button>
                 </div>
             </div>
+            </div>
+            
         </div>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -324,6 +326,8 @@
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script src="{{ asset('js/theme.js') }}" type="text/javascript"></script>
         <script src="{{ asset('js/table.js') }}" type="text/javascript"></script> 
+        <script src="{{ asset('js/main.js') }}" type="text/javascript"></script> 
+
         <script>
             AOS.init();
         </script>
