@@ -17,9 +17,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('products','ProductController');
+Route::get('/inventario', function() {
+    return view('inventario');
+})->name('inventario');
 
 Auth::routes();
+
+Route::resource('products','ProductController');
 
 Route::get('admin/home', 'AdminController@index')->name('admin.home');
 
@@ -47,3 +51,5 @@ Route::get('/mapa', function(){
     $map = app('map')->create_map();
     echo "<html><head><script type='text/javascript'>var centreGot = false;</script>".$map['js']."</head><body>".$map['html']."</body></html>";
 });
+
+
