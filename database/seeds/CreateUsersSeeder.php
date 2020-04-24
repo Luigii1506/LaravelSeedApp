@@ -1,5 +1,7 @@
 <?php
   
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 use Illuminate\Database\Seeder;
 use App\User;
    
@@ -15,20 +17,43 @@ class CreateUsersSeeder extends Seeder
         $user = [
             [
                'name'=>'Admin',
-               'email'=>'admin@itsolutionstuff.com',
-                'is_admin'=>'1',
+               'email'=>'luis.encinas1506@gmail.com',
                'password'=> bcrypt('123456'),
             ],
             [
-               'name'=>'User',
-               'email'=>'user@itsolutionstuff.com',
-                'is_admin'=>'0',
+               'name'=>'Luis Gerardo',
+               'email'=>'luis.encinas@gpomct.com',
                'password'=> bcrypt('123456'),
             ],
+        ];
+
+        $roles = [
+            'Admin'
+        ];
+
+        $permissions = [
+            'ver admin_home',
+            'administrar libros',
+            'descargar excel',
+            'descargar pdf',
+            
         ];
   
         foreach ($user as $key => $value) {
             User::create($value);
         }
+
+        foreach ($roles as $role) {
+            Role::create(['name' => $role]);
+        }
+
+        foreach ($permissions as $permission) {
+            Permission::create(['name' => $permission]);
+        }
+
+        $admin = User::find(1);
+        $role = Role::findById(1);
+        $role->givePermissionTo($permissions);
+        $admin->assignRole($role);
     }
 }
