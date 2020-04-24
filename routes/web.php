@@ -21,7 +21,7 @@ Route::get('/inventario', function() {
     return view('inventario');
 })->name('inventario');
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::resource('products','ProductController');
 

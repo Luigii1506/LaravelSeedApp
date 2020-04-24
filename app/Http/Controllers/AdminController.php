@@ -17,7 +17,7 @@ class AdminController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('is_admin');
+        $this->middleware(['is_admin']);
     }
 
     /**
@@ -30,7 +30,7 @@ class AdminController extends Controller
         $users = User::all();
         $roles = Role::all();
 
-        return view('adminHome', compact('users', 'roles'));
+        return view('admin/home', compact('users', 'roles'));
     }
 
 
