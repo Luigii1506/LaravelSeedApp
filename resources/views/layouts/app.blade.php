@@ -34,9 +34,17 @@
                     </a>
                     <hr class="sidebar-divider my-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">
-                            <i class="fas fa-fw fa-tachometer-alt"></i>
-                            <span>Dashboard</span></a>
+                        @can('ver admin_home')
+                            <a class="nav-link" href="{{ route('admin.home') }}">
+                                <i class="fas fa-fw fa-tachometer-alt"></i>
+                                <span>Dashboard</span></a>
+                        @else
+                            <a class="nav-link" href="{{ route('home') }}">
+                                <i class="fas fa-fw fa-tachometer-alt"></i>
+                                <span>Dashboard</span></a>
+                        @endcan
+
+                      
                     </li>
                     <hr class="sidebar-divider">
                     <div class="sidebar-heading">
@@ -300,7 +308,9 @@
             <div class="btn-group-fab" role="group" aria-label="FAB Menu">
                 <div>
                     <button type="button" class="btn btn-main btn-primary has-tooltip" data-placement="left" title="Menu"> <i class="fa fa-bars"></i> </button>
-                    <button type="button" class="btn btn-sub btn-info has-tooltip" data-placement="left" title="Fullscreen"> <i class="fa fa-arrows-alt"></i> </button>
+                    @can('agregar libro')
+                        <button type="button" class="btn btn-sub btn-info has-tooltip" data-placement="left" title="Fullscreen" data-toggle="modal" data-target="#exampleModal"> <i class="fa fa-plus"></i> </button>
+                    @endcan
                     <button type="button" class="btn btn-sub btn-danger has-tooltip" data-placement="left" title="Save"> <i class="fa fa-floppy-o"></i> </button>
                     <button type="button" class="btn btn-sub btn-warning has-tooltip" data-placement="left" title="Download"> <i class="fa fa-download"></i> </button>
                 </div>
