@@ -25,6 +25,11 @@ class CreateUsersSeeder extends Seeder
                'email'=>'luis.encinas@gpomct.com',
                'password'=> bcrypt('123456'),
             ],
+            [
+                'name'=>'Luis Gerardo 2',
+                'email'=>'luigii_1506@hotmail.com',
+                'password'=> bcrypt('123456'),
+             ],
         ];
 
         $roles = [
