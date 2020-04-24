@@ -17,9 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/inventario', function() {
-    return view('inventario');
-})->name('inventario');
+Route::resource('libros','LibroController');
 
 Auth::routes(['verify' => true]);
 
