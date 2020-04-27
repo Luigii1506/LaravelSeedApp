@@ -71,7 +71,7 @@ class LibroController extends Controller
      */
     public function edit(Libro $libro)
     {
-        //
+        return view('libros.edit',compact('libro'));
     }
 
     /**
@@ -83,7 +83,20 @@ class LibroController extends Controller
      */
     public function update(Request $request, Libro $libro)
     {
-        //
+        $request->validate([
+            'titulo' => 'required',
+            'autor' => 'required',
+            'fecha_publicacion' => 'required',
+            'editorial' => 'required',
+            'resumen' => 'required',
+            'genero' => 'required',
+            'paginas' => 'required'
+        ]);
+  
+        $libro->update($request->all());
+  
+        return redirect()->route('libros.index')
+                        ->with('success','Libro updated successfully');
     }
 
     /**
@@ -94,6 +107,9 @@ class LibroController extends Controller
      */
     public function destroy(Libro $libro)
     {
-        //
+        $libro->delete();
+  
+        return redirect()->route('libros.index')
+                        ->with('success','Libro  deleted successfully');
     }
 }

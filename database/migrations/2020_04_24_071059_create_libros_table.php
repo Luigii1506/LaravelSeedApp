@@ -19,10 +19,10 @@ class CreateLibrosTable extends Migration
             $table->string('autor');
             $table->string('fecha_publicacion');
             $table->string('editorial');
+            $table->string('paginas');
             $table->text('resumen');
             $table->string('genero');
             $table->string('precio');
-            $table->string('palabras_clave');
             $table->string('imagen');
             $table->timestamps();
         });

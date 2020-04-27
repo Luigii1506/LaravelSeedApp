@@ -12,10 +12,9 @@ class Libro extends Model
         'fecha_publicacion',
         'editorial',
         'resumen',
-        'descripcion',
+        'paginas',
         'precio',
         'genero',
-        'palabras_clave',
         'imagen'
     ];
 }
