@@ -1,4 +1,7 @@
-body { width: 100%; height: 100%; }
+body, html { 
+  font-family: 'Nunito Sans', sans-serif !important;
+  width: 100%; height: 100%; 
+}
 .btn-group-fab {
   position: fixed;
   width: 50px;
@@ -54,12 +57,49 @@ body { width: 100%; height: 100%; }
     cursor: pointer;
 }
 
+.libro-text-wrapper {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
 .navbar-nav-admin {
     background-color: #36b9cc;
 }
 
 table tr {
   cursor: pointer;
+}
+
+.libro-titulo-card {
+  font-size: 24px;
+}
+
+.libro-img-wrapper {
+  margin-bottom: 20px;
+}
+
+.libro-show-img {
+  width: 100%;
+  max-width: 300px;
+}
+
+.libro-precio-card {
+  font-size: 30px;
+  line-height: 30px;
+  margin-bottom: 10px;
+}
+
+.price-tag {
+  font-size: 18px !important;
+  line-height: 18px;
+  position: relative;
+  top: -3px;
+  right: -5px;
+}
+
+.center-div {
+  margin: auto;
+  display: block;
 }
 
 tr.hide-table-padding td {
@@ -81,4 +121,18 @@ tr.hide-table-padding td {
 .accordion-toggle.collapsed .expand-button:after
 {
   content: '+';
+}
+
+@media only screen and (max-width: 1200px) {
+  .libro-text-wrapper {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .libro-text-wrapper {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 }

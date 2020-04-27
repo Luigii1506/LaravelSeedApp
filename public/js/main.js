@@ -6,4 +6,8 @@ $(function () {
         window.location = $(this).attr('href');
         return false;
     });
+
+    $('#deleteTag').click(function() {
+        document.getElementById("deleteForm").submit();
+    });
 });
