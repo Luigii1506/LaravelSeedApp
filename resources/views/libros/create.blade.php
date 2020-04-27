@@ -54,6 +54,12 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
+                    <strong>Paginas:</strong>
+                    <input type="text" name="paginas" class="form-control" placeholder="Numero de paginas">
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
                     <strong>Genero:</strong>
                     <input type="text" name="genero" class="form-control" placeholder="Genero">
                 </div>
@@ -62,12 +68,6 @@
                 <div class="form-group">
                     <strong>Precio:</strong>
                     <input type="text" name="precio" class="form-control" placeholder="Precio">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Palabras clave:</strong>
-                    <input type="text" name="palabras_clave" class="form-control" placeholder="Palabras clave">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
