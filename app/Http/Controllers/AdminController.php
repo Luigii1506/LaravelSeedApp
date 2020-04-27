@@ -4,9 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Libro;
+use Excel;
 use Input;
+use Maatwebsite\Excel\Concerns\FromCollection;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+
+class DataExport implements FromCollection {
+    function collection()
+    {
+        return Libro::all();
+    }
+}
 
 class AdminController extends Controller
 {
@@ -49,5 +59,11 @@ class AdminController extends Controller
         $user->assignRole($role);
         
         return back()->with('message','Operation Successful !');
+    }
+
+    public static function exportData()
+    {
+        
+        return Excel::download(new DataExport, 'libros.xlsx');
     }
 }

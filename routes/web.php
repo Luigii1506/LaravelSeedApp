@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/libros/export', 'AdminController@exportData')->name('admin.export');
+
 Route::resource('libros','LibroController');
 
 Auth::routes(['verify' => true]);
