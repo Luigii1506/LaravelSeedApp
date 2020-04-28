@@ -17,7 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/libros/export', 'AdminController@exportData')->name('admin.export');
+Route::get('/libros/exportar', 'LibroController@exportData')->name('libros.export');
+
+Route::get('/libros/favoritos', 'LibroController@getFavoritos')->name('libros.favoritos');
+
+Route::get('/libros/agregar-favorito/{id}', 'LibroController@addToFavorite')->name('libro.favoritos');
 
 Route::resource('libros','LibroController');
 

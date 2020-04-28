@@ -54,9 +54,19 @@
                         </span>
                     </div>
                 </div>
+                
             </div>
         </div>
+        
     </div>  
+
+    <div class="btn-group-fab" role="group" aria-label="FAB Menu">
+        <div>
+            <button type="button" class="btn btn-main btn-primary has-tooltip" data-placement="left" title="Menu"> <i class="fa fa-bars"></i> </button>
+            <a class="btn btn-sub has-tooltip {{ $libro->isFavorited() ? 'favoriteYes' : 'favoriteNo' }}" data-placement="left" title="Fullscreen" href="{{ route('libro.favoritos',$libro->id) }}"> <i class="fa fa-heart icon-fix"></i> </a> 
+        </div>
+    </div>
+    
     <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">

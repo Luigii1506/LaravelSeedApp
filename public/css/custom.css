@@ -74,6 +74,16 @@ table tr {
   font-size: 24px;
 }
 
+.libro-titulo-card-favorite {
+  font-size: 17px;
+}
+
+.a-favorite {
+  text-decoration: none !important;
+  color: #858796 !important;
+  outline: 0;
+}
+
 .libro-img-wrapper {
   margin-bottom: 20px;
 }
@@ -81,6 +91,11 @@ table tr {
 .libro-show-img {
   width: 100%;
   max-width: 300px;
+}
+
+.libro-show-img-favorite {
+  width: 100%;
+  max-width: 130px;
 }
 
 .libro-precio-card {
@@ -121,6 +136,38 @@ tr.hide-table-padding td {
 .accordion-toggle.collapsed .expand-button:after
 {
   content: '+';
+}
+
+
+.favoriteYes {
+  background-color: #e74a3b;
+  color: white;
+  transition: all 4s ease-out;
+
+}
+
+.favoriteNo {
+  background-color: white;
+  color: #e74a3b;
+  transition: all 4s ease-out;
+  border: 1px solid rgba(0,0,0,.15);
+ 
+}
+
+.favoriteYes:hover {
+  background-color: white;
+  color: #e74a3b;
+}
+
+.favoriteNo:hover {
+  background-color: #e74a3b;
+  color: white;
+}
+
+.icon-fix {
+  position: relative;
+  top: 3px;
+  left: -1px;
 }
 
 @media only screen and (max-width: 1200px) {

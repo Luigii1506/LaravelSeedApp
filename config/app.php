@@ -163,6 +163,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
+        ChristianKuri\LaravelFavorite\FavoriteServiceProvider::class,
 
         /*
          * Package Service Providers...

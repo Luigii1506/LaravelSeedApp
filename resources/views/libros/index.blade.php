@@ -56,9 +56,9 @@
 <div class="btn-group-fab" role="group" aria-label="FAB Menu">
     <div>
         <button type="button" class="btn btn-main btn-primary has-tooltip" data-placement="left" title="Menu"> <i class="fa fa-bars"></i> </button>
-        <a class="btn btn-sub btn-info has-tooltip" data-placement="left" title="Fullscreen" href="{{ route('libros.create') }}"> <i class="fa fa-plus"></i> </a> 
+        <a class="btn btn-sub btn-info has-tooltip" data-placement="left" title="Fullscreen" href="{{ route('libros.create') }}"> <i class="fa fa-plus icon-fix "></i> </a> 
         <button type="button" class="btn btn-sub btn-danger has-tooltip" data-placement="left" title="Save"> <i class="fa fa-floppy-o"></i> </button>
-        <a class="btn btn-sub btn-warning has-tooltip" data-placement="left" title="Download" href="{{ route('admin.export') }}"> <i class="fa fa-download"></i> </a>
+        <a class="btn btn-sub btn-warning has-tooltip" data-placement="left" title="Download" href="{{ route('libros.export') }}"> <i class="fa fa-download"></i> </a>
     </div>
 </div>
 @endcan
