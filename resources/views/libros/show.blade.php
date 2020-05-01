@@ -63,6 +63,7 @@
     <div class="btn-group-fab" role="group" aria-label="FAB Menu">
         <div>
             <button type="button" class="btn btn-main btn-primary has-tooltip" data-placement="left" title="Menu"> <i class="fa fa-bars"></i> </button>
+            <a class="btn btn-sub has-tooltip btn-warning" data-placement="left" title="Fullscreen" href="{{ route('pedidos.crear', $libro->id) }}"> <i class="fa fa-shopping-cart icon-fix"></i> </a> 
             <a class="btn btn-sub has-tooltip {{ $libro->isFavorited() ? 'favoriteYes' : 'favoriteNo' }}" data-placement="left" title="Fullscreen" href="{{ route('libro.favoritos',$libro->id) }}"> <i class="fa fa-heart icon-fix"></i> </a> 
         </div>
     </div>
