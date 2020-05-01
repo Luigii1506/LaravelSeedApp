@@ -1,3 +1,5 @@
+@include('sweetalert::alert')
+
 <!doctype html>
     <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -16,6 +18,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
         <link rel="stylesheet" href="{{ asset('css/sb-admin-2.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/jquery.datetimepicker.css') }}">
         <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <script src="https://kit.fontawesome.com/1e95599b3c.js" crossorigin="anonymous"></script>
@@ -45,59 +48,15 @@
 
                       
                     </li>
-                    <hr class="sidebar-divider">
+                    <hr class="sidebar-divider">                    
                     <div class="sidebar-heading">
-                        Interface
+                        Libros
                     </div>
                     <li class="nav-item">
-                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                            <i class="fas fa-fw fa-cog"></i>
-                            <span>Components</span>
+                        <a class="nav-link" href="{{ route('libros.index') }}">
+                            <i class="fas fa-fw fa-book"></i>
+                            <span>Inventario</span>
                         </a>
-                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                            <div class="bg-white py-2 collapse-inner rounded">
-                                <h6 class="collapse-header">Custom Components:</h6>
-                                <a class="collapse-item" href="buttons.html">Buttons</a>
-                                <a class="collapse-item" href="cards.html">Cards</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-                            <i class="fas fa-fw fa-wrench"></i>
-                            <span>Utilities</span>
-                        </a>
-                        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-                            <div class="bg-white py-2 collapse-inner rounded">
-                                <h6 class="collapse-header">Custom Utilities:</h6>
-                                <a class="collapse-item" href="utilities-color.html">Colors</a>
-                                <a class="collapse-item" href="utilities-border.html">Borders</a>
-                                <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                                <a class="collapse-item" href="utilities-other.html">Other</a>
-                            </div>
-                        </div>
-                    </li>
-                    <hr class="sidebar-divider">
-                    <div class="sidebar-heading">
-                        Addons
-                    </div>
-                    <li class="nav-item">
-                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-                        <i class="fas fa-fw fa-folder"></i>
-                        <span>Pages</span>
-                        </a>
-                        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                            <div class="bg-white py-2 collapse-inner rounded">
-                                <h6 class="collapse-header">Login Screens:</h6>
-                                <a class="collapse-item" href="login.html">Login</a>
-                                <a class="collapse-item" href="register.html">Register</a>
-                                <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                                <div class="collapse-divider"></div>
-                                <h6 class="collapse-header">Other Pages:</h6>
-                                <a class="collapse-item" href="404.html">404 Page</a>
-                                <a class="collapse-item" href="blank.html">Blank Page</a>
-                            </div>
-                        </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('libros.favoritos') }}">
@@ -106,10 +65,24 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('libros.index') }}">
-                            <i class="fas fa-fw fa-book"></i>
-                            <span>Inventario</span>
+                        <a class="nav-link" href="{{ route('pedidos.index') }}">
+                            <i class="fa fa-fw fa-shopping-cart"></i>
+                            <span>Pedidos</span>
                         </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+                            <i class="fas fa-fw fa-list"></i>
+                            <span>Categorias</span>
+                        </a>
+                        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                            <div class="bg-white py-2 collapse-inner rounded">
+                                <!--<h6 class="collapse-header">Categorias</h6>-->
+                                <a class="collapse-item" href="utilities-color.html">Historia</a>
+                                <a class="collapse-item" href="utilities-border.html">Esoterismo</a>
+                                <a class="collapse-item" href="utilities-animation.html">Filosofia</a>
+                            </div>
+                        </div>
                     </li>
                     <hr class="sidebar-divider d-none d-md-block">
                     <div class="text-center d-none d-md-inline">
@@ -313,6 +286,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="{{ asset('js/jquery.datetimepicker.js') }}" type="text/javascript"></script>
         <script src="{{ asset('js/theme.js') }}" type="text/javascript"></script>
         <script src="{{ asset('js/table.js') }}" type="text/javascript"></script> 
         <script src="{{ asset('js/main.js') }}" type="text/javascript"></script> 
@@ -320,5 +294,16 @@
         <script>
             AOS.init();
         </script>
+
+        <script type="text/javascript">
+
+        $('.timepicker').
+        ({
+
+            format: 'HH:mm:ss'
+
+        }); 
+
+        </script> 
     </body>
 </html>
