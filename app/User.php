@@ -14,6 +14,12 @@ class User extends Authenticatable implements MustVerifyEmail
     use HasRoles;
     use Favoriteability;
 
+
+    public function pedidos()
+    {
+        return $this->hasMany('App\User');
+    }
+
     /**
      * The attributes that are mass assignable.
      *
