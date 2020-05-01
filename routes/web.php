@@ -25,6 +25,12 @@ Route::get('/libros/agregar-favorito/{id}', 'LibroController@addToFavorite')->na
 
 Route::resource('libros','LibroController');
 
+Route::get('pedidos/crear/{id}','PedidoController@create')->name('pedidos.crear');
+
+Route::post('pedidos/guardar/{id}','PedidoController@store')->name('pedidos.guardar');
+
+Route::resource('pedidos','PedidoController');
+
 Auth::routes(['verify' => true]);
 
 Route::resource('products','ProductController');
