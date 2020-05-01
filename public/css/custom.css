@@ -170,6 +170,26 @@ tr.hide-table-padding td {
   left: -1px;
 }
 
+.img-book-pedidos {
+  width: 150px;
+}
+
+.col-pedidos-text {
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.pedidos-book-title {
+  font-size: 18px;
+  line-height: 20px;
+  text-align: center;
+}
+
+.pedidos-book-price {
+  font-size: 26px;
+  margin-top: 15px;
+}
+
 @media only screen and (max-width: 1200px) {
   .libro-text-wrapper {
     padding-left: 15px;
@@ -177,9 +197,31 @@ tr.hide-table-padding td {
   }
 }
 
+@media only screen and (max-width: 1150px) {
+  .img-book-pedidos {
+    width: 125px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .img-book-pedidos {
+    margin: auto;
+    display: block;
+  }   
+}
+
 @media only screen and (max-width: 768px) {
   .libro-text-wrapper {
     padding-left: 0px;
     padding-right: 0px;
   }
+
+  .pedidos-book-price {
+    margin-top: 10px;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  
 }
