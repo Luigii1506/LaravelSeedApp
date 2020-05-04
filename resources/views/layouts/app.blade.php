@@ -18,7 +18,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
         <link rel="stylesheet" href="{{ asset('css/sb-admin-2.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/jquery.datetimepicker.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
         <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <script src="https://kit.fontawesome.com/1e95599b3c.js" crossorigin="anonymous"></script>
@@ -286,7 +286,11 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script src="{{ asset('js/jquery.datetimepicker.js') }}" type="text/javascript"></script>
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
+
+
         <script src="{{ asset('js/theme.js') }}" type="text/javascript"></script>
         <script src="{{ asset('js/table.js') }}" type="text/javascript"></script> 
         <script src="{{ asset('js/main.js') }}" type="text/javascript"></script> 
@@ -296,14 +300,9 @@
         </script>
 
         <script type="text/javascript">
-
-        $('.timepicker').
-        ({
-
-            format: 'HH:mm:ss'
-
-        }); 
-
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
         </script> 
     </body>
 </html>

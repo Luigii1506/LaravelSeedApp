@@ -35,13 +35,12 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Fecha:</strong>
-                    <input name="fecha" class="timepicker form-control" type="text" autocomplete="off"></div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Hora:</strong>
-                    <input type="text" name="hora" class="form-control" placeholder="Hora" autocomplete="off"> 
+                    <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+                        <input data-toggle="datetimepicker" name="datetime" type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1"/>
+                        <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
